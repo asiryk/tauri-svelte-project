@@ -21,7 +21,7 @@ function serve() {
   return {
     writeBundle() {
       if (server) return;
-      server = require("child_process").spawn("npm", ["run", "sirv", "public/", "--", "--dev"], {
+      server = require("child_process").spawn("npm", ["run", "serve"], {
         stdio: ["ignore", "inherit", "inherit"],
         shell: true,
       });

@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "rollup -c",
-    "dev": "rollup -cw",
-    "check": "svelte-check --tsconfig ./tsconfig.json",
-    "sirv": "sirv",
-    "tauri": "tauri"
+    "build:js": "rollup -c",
+    "build": "npm run build:js && tauri build",
+    "dev:js": "rollup -cw",
+    "dev:rust": "tauri dev",
+    "serve": "sirv public --no-clean --dev",
+    "check": "svelte-check --tsconfig ./tsconfig.json"
   },
   "dependencies": {
     "@tauri-apps/api": "^1.0.0-rc.4"
